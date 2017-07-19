@@ -22,7 +22,7 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "css": ["common.style.css"],
-      "js": ["contentscript.js"]
+      "js": ["userscript.js"]
     }
   ]
 }

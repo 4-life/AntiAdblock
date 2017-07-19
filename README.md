@@ -6,8 +6,8 @@ Anti Adblock userscript and extension
 
 For userscript build run:
 
-    $ gulp contentscript
+    $ npm run uscript
 
 For build extension:
 
-    $ gulp extension
+    $ npm run ext

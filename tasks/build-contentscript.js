@@ -13,11 +13,11 @@ module.exports = () => {
             presets: ['stage-0', 'es2015'],
             plugins: ['transform-runtime']
         })
-        .require('./src/contentscript.main.js', {
+        .require('./src/userscript.main.js', {
             entry: true
         })
         .bundle()
-        .pipe(source('contentscript.user.js'))
+        .pipe(source('userscript.user.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('./dist/'));

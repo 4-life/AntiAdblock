@@ -5,7 +5,7 @@ gulp.task('extension', () => {
     runSequence('clean', 'build-css', 'build-extension', 'copy-extension-files');
 });
 
-gulp.task('contentscript', () => {
+gulp.task('userscript', () => {
     runSequence('clean', 'build-css', 'build-contentscript', 'css-to-js', 'concat', 'clean-unused');
 });
 

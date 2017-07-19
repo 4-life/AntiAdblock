@@ -17,7 +17,7 @@ module.exports = () => {
             entry: true
         })
         .bundle()
-        .pipe(source('contentscript.js'))
+        .pipe(source('userscript.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest('./dist/'));

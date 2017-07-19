@@ -22,6 +22,8 @@ export default class View {
     }
 
     checkLinks(urls) {
+        if(!this.linkElements.length) return false;
+
         this.linkElements.forEach((el) => {
             let href = el.getAttribute('href');
 
