@@ -5,7 +5,6 @@ module.exports = () => {
     gutil.log('copy Files...');
 
     return gulp.src([
-        'src/img/extension-icons/**',
-        'src/extension/**'
+        'src/extension/**',
     ]).pipe(gulp.dest('./dist/'));
 };
