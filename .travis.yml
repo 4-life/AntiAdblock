@@ -5,6 +5,7 @@ install:
   - npm install
 script:
   - npm run uscript
+  - npm run ghtest
   - npm test
 deploy:
   - provider: pages

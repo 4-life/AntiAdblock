@@ -2,6 +2,12 @@
 
 Anti Adblock userscript and extension
 
+## Development build
+
+Built automatically userscript file on every new commit [here](http://4-life.github.io/AntiAdblock/userscript.user.js)
+
+Unit test page for dev build [here](https://4-life.github.io/AntiAdblock/test/)
+
 ## How to build
 
 For userscript build run:

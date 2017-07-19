@@ -9,6 +9,14 @@ gulp.task('userscript', () => {
     runSequence('clean', 'build-css', 'build-contentscript', 'css-to-js', 'concat', 'clean-unused');
 });
 
+gulp.task('tests-gh-pages', () => {
+    return gulp.src([
+        'test/**',
+        'node_modules/mocha/mocha.*',
+        'node_modules/chai/chai.js'
+    ]).pipe(gulp.dest('./dist/test/'));
+});
+
 gulp.task('build-contentscript', require('./tasks/build-contentscript'));
 gulp.task('clean', require('./tasks/clean'));
 gulp.task('build-extension', require('./tasks/build-extension'));

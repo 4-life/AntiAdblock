@@ -4,9 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "mocha-phantomjs test/test.html",
     "uscript": "gulp userscript",
-    "ext": "gulp extension"
+    "ext": "gulp extension",
+    "test": "mocha-phantomjs test/test.html",
+    "ghtest": "gulp tests-gh-pages"
   },
   "author": "",
   "devDependencies": {
