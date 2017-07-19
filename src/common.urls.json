@@ -1,0 +1,7 @@
+{
+  "data": [
+      {"url": "wikipedia.org", "status": "untrusted"},
+      {"url": "vk.com", "status": "untrusted"},
+      {"url": "vk.me", "status": "untrusted"},
+  ]
+}

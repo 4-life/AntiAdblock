@@ -1,0 +1,101 @@
+/* contentscript styles */
+.adguard-icon {
+    position: absolute;
+    left: -20px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+
+    .adguard-icon-status {
+        opacity: 0.5;
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+
+        &.adguard-icon-status-ok {
+            background: url('./img/ok.svg') no-repeat;
+            background-size: contain;
+        }
+
+        &.adguard-icon-status-not-ok {
+            background: url('./img/not-ok.svg') no-repeat;
+            background-size: contain;
+        }
+
+        &:hover, &.adguard-icon-status-show {
+            opacity: 1;
+        }
+
+        .adguard-icon-status-content {
+            position: absolute;
+            width: 200px;
+            background: #fff;
+            z-index: 999999;
+            border: 1px solid #ccc;
+            box-shadow: rgba(0, 0, 0, 0.3) -1px 2px 4px;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 200;
+            display: none;
+            top: -10px;
+            left: 30px;
+
+            &:before,
+            &:after {
+                position: absolute;
+                z-index: 10;
+                top: 20px;
+                left: -5px;
+                width: 10px;
+                height: 10px;
+                margin-top: -5px;
+                content: ' ';
+                transform: rotate(45deg);
+                background: rgb(255, 255, 255);
+            }
+
+            &:after {
+                z-index: 9;
+                box-shadow: rgba(0, 0, 0, 0.3) -1px 2px 4px;
+            }
+
+            p {
+                width: 100%;
+                overflow: hidden;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            .adguard-icon-status-close {
+                float: right;
+                outline: none;
+                border: none;
+                background: none;
+                font-size: 22px;
+                line-height: 22px;
+                padding: 0 5px;
+                cursor: pointer;
+            }
+
+            .adguard-icon-status-denied,
+            .adguard-icon-status-allowed {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                border-radius: 100%;
+                margin: 0 10px 0 0;
+                background: red;
+            }
+
+            .adguard-icon-status-allowed {
+                background: green;
+            }
+        }
+        &.adguard-icon-status-show .adguard-icon-status-content{
+            display: block;
+        }
+    }
+}

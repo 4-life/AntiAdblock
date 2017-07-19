@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Anti-adblock",
+  "description": "Extension for Anti-adblock",
+  "version": "1.0.0",
+
+  "browser_action": {
+    "default_icon": "favicon-64x64.png",
+    "default_popup": "popup.html",
+    "default_title": "Anti-adblock"
+  },
+  "icons": {
+      "16": "favicon-16x16.png",
+      "48": "favicon-48x48.png",
+      "128": "favicon-128x128.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["common.style.css"],
+      "js": ["contentscript.js"]
+    }
+  ]
+}
