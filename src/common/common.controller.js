@@ -14,17 +14,26 @@ export default class Controller {
 
         const _this = this;
 
-        let observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if(mutation.type === 'childList') {
-                _this.rebuild(mutation.target.classList);
-            }
-          });
-        });
+        const MutationObserver =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
 
-        let config = { childList: true, subtree: true };
+        try {
+            let observer = new MutationObserver(function(mutations) {
+              mutations.forEach(function(mutation) {
+                if(mutation.type === 'childList') {
+                    _this.rebuild(mutation.target.classList);
+                }
+              });
+            });
 
-        observer.observe(target, config);
+            let config = { childList: true, subtree: true };
+
+            observer.observe(target, config);
+        } catch (e) {
+            console.log('MutationObserver is not available on this browser');
+        }
     }
 
     // TODO: check after canceled
