@@ -11,7 +11,7 @@ module.exports = () => {
 
     return browserify().transform(babelify, {
             presets: ['stage-0', 'es2015'],
-            plugins: ['transform-runtime']
+            plugins: ['transform-runtime', 'transform-decorators-legacy']
         })
         .require('./src/extension.main.js', {
             entry: true

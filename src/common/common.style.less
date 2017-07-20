@@ -1,16 +1,20 @@
 /* contentscript styles */
+
 .adguard-icon {
-    position: absolute;
-    left: -20px;
+    position: absolute!important;
     width: 15px;
     height: 15px;
-    display: inline-block;
+    display: inline-block!important;
+    margin: 1px;
+    vertical-align: middle;
+    z-index: 10;
 
     .adguard-icon-status {
         opacity: 0.5;
         width: 15px;
         height: 15px;
-        vertical-align: middle;
+        vertical-align: middle!important;
+        cursor: pointer;
 
         &.adguard-icon-status-ok {
             background: url('./img/ok.svg') no-repeat;
@@ -27,25 +31,43 @@
         }
 
         .adguard-icon-status-content {
-            position: absolute;
+            position: absolute!important;
             width: 200px;
             background: #fff;
-            z-index: 999999;
             border: 1px solid #ccc;
             box-shadow: rgba(0, 0, 0, 0.3) -1px 2px 4px;
             border-radius: 4px;
             padding: 10px;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 200;
             display: none;
             top: -10px;
             left: 30px;
+            cursor: default;
+
+            p,i {
+                font-family: 'Tahoma', sans-serif!important;
+                font-size: 14px!important;
+                font-style: normal!important;
+                font-weight: 200!important;
+                line-height: 16px!important;
+                color: #333!important;
+            }
+
+            p {
+                display: block!important;
+                padding: 0!important;
+                margin: 10px 0!important;
+            }
+
+            i {
+                padding: 0!important;
+                margin: 0!important;
+                font-style: italic!important;
+            }
 
             &:before,
             &:after {
-                position: absolute;
-                z-index: 10;
+                position: absolute!important;
+                z-index: 101;
                 top: 20px;
                 left: -5px;
                 width: 10px;
@@ -57,15 +79,15 @@
             }
 
             &:after {
-                z-index: 9;
+                z-index: 100;
                 box-shadow: rgba(0, 0, 0, 0.3) -1px 2px 4px;
             }
 
             p {
                 width: 100%;
-                overflow: hidden;
-                text-align: left;
-                white-space: nowrap;
+                overflow: hidden!important;
+                text-align: left!important;
+                white-space: nowrap!important;
             }
 
             .adguard-icon-status-close {
@@ -95,7 +117,7 @@
             }
         }
         &.adguard-icon-status-show .adguard-icon-status-content{
-            display: block;
+            display: block!important;
         }
     }
 }
