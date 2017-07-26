@@ -22,7 +22,7 @@ export default class Utils {
         return !(el.childElementCount === 1 && el.innerHTML.indexOf('img') > -1);
     }
 
-    validateLinkAllreadyChecked(el) {
+    validateLinkAlreadyChecked(el) {
         let href = el.getAttribute('href');
         let ad = qsa('.adguard-icon', el.parentNode);
         let sts = true;
@@ -33,6 +33,5 @@ export default class Utils {
         });
 
         return sts;
-        // return ad && ad.getAttribute('data-href') !== href;
     }
 }

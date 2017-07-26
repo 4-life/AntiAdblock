@@ -5,6 +5,10 @@ gulp.task('extension', () => {
     runSequence('clean', 'build-css', 'build-extension', 'copy-extension-files');
 });
 
+gulp.task('dev-extension-watch', () => {
+    runSequence('build-css', 'dev-extension', 'copy-extension-files');
+});
+
 gulp.task('userscript', () => {
     runSequence('clean', 'build-css', 'build-contentscript', 'css-to-js', 'concat', 'clean-unused');
 });
@@ -26,3 +30,5 @@ gulp.task('copy-extension-files', require('./tasks/copy-extension-files'));
 gulp.task('clean-unused', require('./tasks/clean-unused'));
 gulp.task('css-to-js', require('./tasks/css-to-js'));
 gulp.task('concat', require('./tasks/concat'));
+gulp.task('watch', require('./tasks/watch'));
+gulp.task('dev-extension', require('./tasks/dev-extension'));

@@ -21,7 +21,9 @@
             background-size: contain;
         }
 
-        &.adguard-icon-status-not-ok {
+        &.adguard-status-1,
+        &.adguard-status-2,
+        &.adguard-status-4 {
             background: url('./img/not-ok.svg') no-repeat;
             background-size: contain;
         }
@@ -32,7 +34,7 @@
 
         .adguard-icon-status-content {
             position: absolute!important;
-            width: 200px;
+            width: 300px;
             background: #fff;
             border: 1px solid #ccc;
             box-shadow: rgba(0, 0, 0, 0.3) -1px 2px 4px;
@@ -56,6 +58,8 @@
                 display: block!important;
                 padding: 0!important;
                 margin: 10px 0!important;
+                word-break: break-word!important;
+                white-space: normal!important;
             }
 
             i {
@@ -85,9 +89,11 @@
 
             p {
                 width: 100%;
-                overflow: hidden!important;
                 text-align: left!important;
-                white-space: nowrap!important;
+            }
+
+            ul {
+                list-style: none!important;
             }
 
             .adguard-icon-status-close {

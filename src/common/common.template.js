@@ -1,12 +1,34 @@
 import {escapeForHTML} from './common.helpers';
 
+import categories from '../categories.json';
+
 export default class Template {
     linkStatus(data) {
-        data.status === 'allowed' ? data.statusText = 'No known threats' : data.statusText = 'There are threats';
+        let text = {};
+        text.threats = [];
+        text.status = 'Donate';
+        text.statusClass = 'allow';
+
+        data.categories.forEach((id) => {
+
+            if (id === 1 || id === 2 || id === 4) {
+                text.status = 'Warning';
+                text.statusClass = 'warning';
+            }
+
+            text.threats.push(categories[id].description);
+        });
+
+        let threats = text.threats.reduce((text, threat) => {
+            return text + '<li><p>' + escapeForHTML(threat) + '</p></li>';
+        }, '');
+
         return `<div class="adguard-icon-status-content">
             <button class="adguard-icon-status-close">×</button>
-            <p>${escapeForHTML(data.title)}<br/><i>${escapeForHTML(data.href)}</i></p>
-            <p><span class="adguard-icon-status-${escapeForHTML(data.status)}"></span>${escapeForHTML(data.statusText)}</p>
+            <span>Adblock Recovery</span>
+            <p class="status status-${escapeForHTML(text.statusClass)}">Status: ${escapeForHTML(text.status)}</p>
+            <p>The ${escapeForHTML(data.domain)} site you are trying to navigate uses anti-blocking mechanisms:</p>
+            <ul>${threats}</ul>
         </div>`;
     }
 }

@@ -4,6 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp dev-extension-watch && gulp watch",
     "uscript": "gulp userscript",
     "ext": "gulp extension",
     "test": "mocha-phantomjs test/test.html",
@@ -28,6 +29,7 @@
     "gulp-less": "^3.3.2",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-inline-urls": "^1.2.0",
     "mocha": "^3.4.2",

@@ -1,4 +1,4 @@
-import {$on, $off, $delegate, qsa} from './common.helpers';
+import {$on, $delegate, qsa} from './common.helpers';
 import Utils from './common.utils';
 
 const ESCAPE_KEY = 27;
@@ -24,7 +24,7 @@ export default class View {
     checkLinks(urls) {
         this.linkElements = document.querySelectorAll('a');
 
-        if(!this.linkElements.length) return false;
+        if (!this.linkElements.length) return false;
 
         this.linkElements.forEach((el) => {
             let href = el.getAttribute('href');
@@ -39,19 +39,12 @@ export default class View {
 
                 adguard.appendChild(adguradIcon);
 
-                let status = urls.data.some(this.compare.bind(this, href, adguradIcon));
+                let status = urls.data.find(this.compare.bind(this, href, adguradIcon));
 
-                let data = {
-                    title: 'Address',
-                    status: status ? 'denied' : 'allowed',
-                    href: href
-                };
-
-                // parent.insertBefore(adguard, el);
-                parent.insertBefore(adguard, el.nextSibling);
-                // el.appendChild(adguard);
-
-                this.showLinkStatus(adguradIcon, data);
+                if (status) {
+                    parent.insertBefore(adguard, el.nextSibling);
+                    this.showLinkStatus(adguradIcon, status);
+                }
             }
         });
     }
@@ -75,7 +68,7 @@ export default class View {
             case utils.validateLinkIsNotTagImage(el):
                 return false;
 
-            case utils.validateLinkAllreadyChecked(el):
+            case utils.validateLinkAlreadyChecked(el):
                 return false;
             default:
                 return true;
@@ -83,14 +76,14 @@ export default class View {
     }
 
     compare(href, adguradIcon, link) {
-        if (href.indexOf(link.url) > -1 && link.status === 'untrusted') {
-            adguradIcon.classList.add('adguard-icon-status-not-ok');
-            adguradIcon.classList.remove('adguard-icon-status-ok');
+        if (href.indexOf(link.domain) > -1 && link.categories.length) {
+            link.categories.forEach((lvl) => {
+                adguradIcon.classList.add('adguard-status-' + lvl);
+            });
 
-            return true;
+            return link;
         } else {
             adguradIcon.classList.add('adguard-icon-status-ok');
-            adguradIcon.classList.remove('adguard-icon-status-not-ok');
         }
     }
 
@@ -99,6 +92,7 @@ export default class View {
         qsa('.adguard-icon').forEach((el) => el.style = 'z-index:0;');
         target.parentNode.style = '';
     }
+
     showLinkStatus(target, data) {
         $on(target, 'click', this.stopPropagation);
         target.innerHTML = this.template.linkStatus(data);
