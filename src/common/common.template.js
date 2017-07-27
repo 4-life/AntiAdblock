@@ -27,10 +27,11 @@ export default class Template {
 
         return `<div class="adguard-icon-status-content">
             <button class="adguard-icon-status-close">×</button>
-            <span>${i18n('adblock_recovery')}</span>
-            <p class="status status-${escapeForHTML(text.statusClass)}">${i18n('status')}:${escapeForHTML(text.status)}</p>
+            <span class="adguard-status-recovery">${i18n('adblock_recovery')}</span>
+            <p class="status status-${escapeForHTML(text.statusClass)}">
+                ${i18n('status')}: ${escapeForHTML(text.status)}</p>
             <p>${escapeForHTML(data.domain)} ${i18n('mechanisms')}:</p>
-            <ul>${threats}</ul>
+            <ul class="status-icon status-icon-${escapeForHTML(text.statusClass)}">${threats}</ul>
         </div>`;
     }
 }
