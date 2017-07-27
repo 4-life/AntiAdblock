@@ -2,6 +2,8 @@ import {escapeForHTML} from './common.helpers';
 
 import categories from '../categories.json';
 
+import {i18n} from './localization';
+
 export default class Template {
     linkStatus(data) {
         let text = {};
@@ -20,14 +22,14 @@ export default class Template {
         });
 
         let threats = text.threats.reduce((text, threat) => {
-            return text + '<li><p>' + escapeForHTML(threat) + '</p></li>';
+            return text + '<li><p>' + i18n(escapeForHTML(threat)) + '</p></li>';
         }, '');
 
         return `<div class="adguard-icon-status-content">
             <button class="adguard-icon-status-close">×</button>
-            <span>Adblock Recovery</span>
-            <p class="status status-${escapeForHTML(text.statusClass)}">Status: ${escapeForHTML(text.status)}</p>
-            <p>The ${escapeForHTML(data.domain)} site you are trying to navigate uses anti-blocking mechanisms:</p>
+            <span>${i18n('adblock_recovery')}</span>
+            <p class="status status-${escapeForHTML(text.statusClass)}">${i18n('status')}:${escapeForHTML(text.status)}</p>
+            <p>${escapeForHTML(data.domain)} ${i18n('mechanisms')}:</p>
             <ul>${threats}</ul>
         </div>`;
     }

@@ -1,0 +1,14 @@
+{
+    "adblock_recovery": {
+        "message": "Adblock recovery"
+    },
+    "status": {
+        "message": "Status"
+    },
+    "mechanisms": {
+        "message": "site you are trying to navigate uses anti-blocking mechanisms"
+    },
+    "adblock_wall_description": {
+        "message": "The site determines the adblocker and tries to deny access to its content"
+    }
+}
