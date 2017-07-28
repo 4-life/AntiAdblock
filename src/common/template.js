@@ -1,4 +1,4 @@
-import {escapeForHTML} from './common.helpers';
+import {escapeForHTML} from './helpers';
 
 import categories from '../categories.json';
 

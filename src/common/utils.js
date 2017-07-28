@@ -1,4 +1,4 @@
-import {qsa} from './common.helpers';
+import {qsa} from './helpers';
 
 export default class Utils {
     validateUrlString(url) {
@@ -7,7 +7,8 @@ export default class Utils {
 
     validateUrlIsExternal(url) {
         let host = document.location.host.replace('www.', '');
-        return url.indexOf(host) === -1 && url.indexOf('//') > -1;
+        url = url.replace('www.', '');
+        return url.indexOf(host) === -1;
     }
 
     validateLinkIsNotEmpty(el) {
@@ -22,16 +23,23 @@ export default class Utils {
         return !(el.childElementCount === 1 && el.innerHTML.indexOf('img') > -1);
     }
 
+    /**
+     * validateLinkAlreadyChecked
+     *
+     * @param  {Object} el   current link element
+     * @return {Object|undefined}    object for update or undefined
+     */
     validateLinkAlreadyChecked(el) {
-        let href = el.getAttribute('href');
-        let ad = qsa('.adguard-icon', el.parentNode);
-        let sts = true;
-        ad.forEach((a) => {
-            if(a.getAttribute('data-href') === href) {
-                sts = false;
+        let href = el.hostname;
+        let iconElements = qsa('.adguard-icon', el.parentNode);
+        let currentEl;
+
+        iconElements.forEach((el) => {
+            if(el.getAttribute('data-href') === href) {
+                currentEl = el;
             }
         });
 
-        return sts;
+        return currentEl;
     }
 }

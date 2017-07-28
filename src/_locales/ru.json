@@ -9,6 +9,18 @@
         "message": "сайт содержит механизмы обхода блокировок рекламы"
     },
     "adblock_wall_description": {
-        "message": "Сайт определяет наличие блокировщика рекламы и пытается запретить доступ к своему контенту"
+        "message": "Запрет доступа к контенту"
+    },
+    "paywall_description": {
+        "message": "Плата за разблокировку контента"
+    },
+    "adblock_warning_description": {
+        "message": "Просьба отключить блокировку рекламы"
+    },
+    "ad_reinjection_description": {
+        "message": "Восстановление рекламы"
+    },
+    "disable_ads_description": {
+        "message": "Возможность отключить рекламу"
     }
 }

@@ -21,7 +21,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "css": ["common.style.css"],
+      "css": ["style.css"],
       "js": ["userscript.js"]
     }
   ]

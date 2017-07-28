@@ -1,5 +1,5 @@
-import {$on, $delegate, qsa} from './common.helpers';
-import Utils from './common.utils';
+import {$on, $delegate, qsa} from './helpers';
+import Utils from './utils';
 
 const ESCAPE_KEY = 27;
 
@@ -24,25 +24,20 @@ export default class View {
     checkLinks(urls) {
         this.linkElements = document.querySelectorAll('a');
 
-        if (!this.linkElements.length) return false;
-
         this.linkElements.forEach((el) => {
-            let href = el.getAttribute('href');
-
             if (this.linkCheckRequirements(el)) {
                 let adguard = document.createElement('div');
                 let adguradIcon = document.createElement('div');
                 adguard.className = 'adguard-icon';
-                adguard.setAttribute('data-href', href);
+                adguard.setAttribute('data-href', el.hostname);
                 adguradIcon.className = 'adguard-icon-status';
-                let parent = el.parentNode;
 
                 adguard.appendChild(adguradIcon);
 
-                let status = urls.data.find(this.compare.bind(this, href, adguradIcon));
+                let status = urls.data.find(this.compare.bind(this, el.hostname, adguradIcon));
 
                 if (status) {
-                    parent.insertBefore(adguard, el.nextSibling);
+                    el.parentNode.insertBefore(adguard, el.nextSibling);
                     this.showLinkStatus(adguradIcon, status);
                 }
             }
@@ -50,7 +45,7 @@ export default class View {
     }
 
     linkCheckRequirements(el) {
-        let url = el.getAttribute('href');
+        let url = el.hostname;
 
         switch (false) {
             case utils.validateUrlString(url):
@@ -68,7 +63,7 @@ export default class View {
             case utils.validateLinkIsNotTagImage(el):
                 return false;
 
-            case utils.validateLinkAlreadyChecked(el):
+            case !utils.validateLinkAlreadyChecked(el):
                 return false;
             default:
                 return true;
