@@ -2,7 +2,7 @@
 // @name Anti adblock
 // @namespace Adguard
 // @description Anti adblock
-// @version 1.0.0
+// @version 1.0.2
 // @downloadURL https://antiadblock.user.js
 // @updateURL https://antiadblock.meta.js
 // @include *
