@@ -22,7 +22,9 @@ export default class View {
     }
 
     checkLinks(urls) {
-        this.linkElements = document.querySelectorAll('a') || [];
+        this.linkElements = document.querySelectorAll('a');
+
+        if(!this.linkElements.length) return false;
 
         this.linkElements.forEach((el) => {
             if (this.linkCheckRequirements(el)) {
