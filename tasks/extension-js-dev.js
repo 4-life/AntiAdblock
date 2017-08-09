@@ -4,7 +4,6 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const uglify = require('gulp-uglify');
 
 module.exports = () => {
     gutil.log('compiling JS...');
@@ -19,6 +18,5 @@ module.exports = () => {
         .bundle()
         .pipe(source('userscript.js'))
         .pipe(buffer())
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/extension/'));
 };

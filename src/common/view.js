@@ -47,7 +47,7 @@ export default class View {
     }
 
     linkCheckRequirements(el) {
-        let url = el.hostname;
+        let url = decodeURIComponent(el.hostname);
 
         switch (false) {
             case utils.validateUrlString(url):

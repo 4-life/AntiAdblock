@@ -1,0 +1,147 @@
+.form-ui input[type="checkbox"],
+.form-ui input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    outline: 0 none;
+}
+
+.form-ui-txt:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    .bg( 'radio.png');
+}
+
+input[type="checkbox"]:checked+.form-ui-txt:before {
+    background-position: 0 -30px;
+}
+
+.header {
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: 19px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.section-head {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    font: 700 22px/1.2 "Open Sans",Arial,sans-serif;
+    color: #bbb;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 1240px) {
+    .container {
+        width: 960px;
+    }
+}
+
+.header_lead,
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header_sep {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+    color: @green;
+    margin: 0 10px;
+}
+
+.logo {
+    font: 300 40px/1.2 "Open Sans",Arial,sans-serif;
+    color: #333;
+}
+
+.main {
+    padding: 20px 0 140px;
+}
+
+.page-head {
+    margin: 0 0 32px;
+    font: 300 40px/1.2 "Open Sans",Arial,sans-serif;
+    color: #666;
+}
+
+.form-group {
+    margin: 15px 0 0;
+}
+
+.form-ui {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 20px;
+    margin: 0;
+    padding: 0 0 0 33px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.form-ui-txt {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    padding: 43px 0;
+    border-top: 1px solid #d9d9d9;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.footer_powered,
+.footer_powered:hover {
+    color: #262626;
+    text-decoration: none;
+}
+
+.footer_powered_text {
+    position: relative;
+    top: 1px;
+    margin: 0 2px 0 0;
+}
+
+.adguard-logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 102px;
+    height: 24px;
+    .bg( 'adguard-logo.svg');
+}
+
+.footer-menu_i {
+    float: left;
+    margin: 0 40px 0 0;
+}
+
+.footer-menu_i a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer_powered {
+    float: right;
+}

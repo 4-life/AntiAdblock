@@ -6,5 +6,6 @@ module.exports = () => {
 
     return gulp.src([
         'src/extension/**',
-    ]).pipe(gulp.dest('./dist/'));
+        '!src/extension/css{,/**}'
+    ]).pipe(gulp.dest('./dist/extension/'));
 };

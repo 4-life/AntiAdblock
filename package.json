@@ -1,12 +1,11 @@
 {
   "name": "anti-adblock",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp dev-extension-watch && gulp watch",
-    "uscript": "gulp userscript",
-    "ext": "gulp extension",
+    "start": "gulp build-dev && gulp watch",
+    "ext": "gulp build-dev",
     "test": "mocha-phantomjs test/test.html",
     "ghtest": "gulp tests-gh-pages"
   },

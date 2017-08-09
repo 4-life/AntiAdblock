@@ -10,7 +10,7 @@ export default class Controller {
 
         view.bindOpenItemCancel(this.openItemCancel.bind(this));
 
-        let target = document.body;
+        let target = document;
 
         const _this = this;
 
@@ -21,11 +21,11 @@ export default class Controller {
 
         try {
             let observer = new MutationObserver(function(mutations) {
-              mutations.forEach(function(mutation) {
-                if(mutation.type === 'childList') {
-                    _this.rebuild(mutation.target.classList);
-                }
-              });
+                mutations.forEach(function(mutation) {
+                    if(mutation.type === 'childList') {
+                        _this.rebuild(mutation.target.classList);
+                    }
+                });
             });
 
             let config = { childList: true, subtree: true };
