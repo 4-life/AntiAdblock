@@ -6,7 +6,7 @@ export default class Utils {
     }
 
     validateUrlIsExternal(url) {
-        let host = document.location.host.replace('www.', '');
+        let host = document.location.host.split('.').slice(-2).join('.');
         url = url.replace('www.', '');
         return url.indexOf(host) === -1;
     }

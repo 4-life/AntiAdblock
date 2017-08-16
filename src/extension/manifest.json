@@ -22,7 +22,6 @@
     {
       "all_frames": true,
       "matches": ["http://*/*", "https://*/*"],
-      "css": ["main.css"],
       "js": ["userscript.js"]
     }
   ],

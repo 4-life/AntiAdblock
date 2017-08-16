@@ -15,6 +15,9 @@ export function qsa(selector, scope) {
 }
 
 export function $delegate(target, selector, type, handler, capture) {
+    if(!target) {
+        return false;
+    }
     const dispatchEvent = event => {
         const targetElement = event.target;
         const potentialElements = target.querySelectorAll(selector);

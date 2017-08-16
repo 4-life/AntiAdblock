@@ -4,7 +4,8 @@ node_js:
 install:
   - npm install
 script:
-  - npm run uscript
+  - npm run opt-build
+  - npm run usr-build
   - npm run ghtest
   - npm test
 deploy:

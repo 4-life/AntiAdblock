@@ -10,10 +10,6 @@ Unit test page for dev build [here](https://4-life.github.io/AntiAdblock/test/)
 
 ## How to build
 
-For userscript build run:
-
-    $ npm run uscript
-
-For build extension:
+For build extension and userscript:
 
     $ npm run ext
