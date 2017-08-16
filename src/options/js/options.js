@@ -1,7 +1,7 @@
 export const options = {
     warningIconsNearLinks: true,
     preventAccess: true,
-    tryToCircumvent: false,
+    tryToCircumvent: true,
     google: true,
     bing: true,
     yahoo: true,

@@ -111,4 +111,10 @@ export default class View {
     stopPropagation(e) {
         e.stopPropagation();
     }
+
+    pageOptionsChangeListener(handler) {
+        $delegate(document, '.option', 'click', () => {
+            handler();
+        });
+    }
 }
