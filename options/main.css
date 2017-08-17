@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('fonts/open-sans-v10-latin_cyrillic-300.eot');
+  src: local('Open Sans Light'), url('fonts/open-sans-v10-latin_cyrillic-300.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-300.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-300.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-300.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: 300;
+}
+@font-face {
+  font-family: 'Open Sans Light Italic';
+  src: url('fonts/open-sans-v10-latin_cyrillic-300italic.eot');
+  src: local('Open Sans Light Italic'), url('fonts/open-sans-v10-latin_cyrillic-300italic.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-300italic.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-300italic.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-300italic.svg#icon') format('svg');
+  font-weight: italic;
+  font-style: 300;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans-v10-latin_cyrillic-regular.eot');
+  src: local('Open Sans'), url('fonts/open-sans-v10-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-regular.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-regular.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-regular.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: 400;
+}
+@font-face {
+  font-family: 'Open Sans Italic';
+  src: url('fonts/open-sans-v10-latin_cyrillic-italic.eot');
+  src: local('Open Sans Italic'), url('fonts/open-sans-v10-latin_cyrillic-italic.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-italic.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-italic.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-italic.svg#icon') format('svg');
+  font-weight: italic;
+  font-style: 400;
+}
+@font-face {
+  font-family: 'Open Sans Semibold';
+  src: url('fonts/open-sans-v10-latin_cyrillic-600.eot');
+  src: local('Open Sans Semibold'), url('fonts/open-sans-v10-latin_cyrillic-600.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-600.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-600.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-600.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: 600;
+}
+@font-face {
+  font-family: 'Open Sans Semibold Italic';
+  src: url('fonts/open-sans-v10-latin_cyrillic-600italic.eot');
+  src: local('Open Sans Semibold Italic'), url('fonts/open-sans-v10-latin_cyrillic-600italic.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-600italic.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-600italic.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-600italic.svg#icon') format('svg');
+  font-weight: italic;
+  font-style: 600;
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('fonts/open-sans-v10-latin_cyrillic-700.eot');
+  src: local('Open Sans Bold'), url('fonts/open-sans-v10-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-700.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-700.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-700.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: 700;
+}
+@font-face {
+  font-family: 'Open Sans Bold Italic';
+  src: url('fonts/open-sans-v10-latin_cyrillic-700italic.eot');
+  src: local('Open Sans Bold Italic'), url('fonts/open-sans-v10-latin_cyrillic-700italic.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-700italic.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-700italic.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-700italic.svg#icon') format('svg');
+  font-weight: italic;
+  font-style: 700;
+}
+@font-face {
+  font-family: 'Open Sans Extrabold';
+  src: url('fonts/open-sans-v10-latin_cyrillic-800.eot');
+  src: local('Open Sans Extrabold'), url('fonts/open-sans-v10-latin_cyrillic-800.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-800.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-800.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-800.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: 800;
+}
+@font-face {
+  font-family: 'Open Sans Extrabold Italic';
+  src: url('fonts/open-sans-v10-latin_cyrillic-800italic.eot');
+  src: local('Open Sans Extrabold Italic'), url('fonts/open-sans-v10-latin_cyrillic-800italic.eot?#iefix') format('embedded-opentype'), url('fonts/open-sans-v10-latin_cyrillic-800italic.woff') format('woff'), url('fonts/open-sans-v10-latin_cyrillic-800italic.ttf') format('truetype'), url('fonts/open-sans-v10-latin_cyrillic-800italic.svg#icon') format('svg');
+  font-weight: italic;
+  font-style: 800;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  position: relative;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  min-width: 980px;
+  font: 16px/1.625 "Open Sans", Arial, sans-serif;
+  color: #262626;
+  background-color: #fff;
+  margin: 0;
+}
+a {
+  color: #29d682;
+  text-decoration: underline;
+  outline: 0;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+}
+input[type="checkbox"]:checked + .form-ui-txt:before {
+  background-position: 0 -30px;
+}
+.header {
+  padding: 20px 0;
+  font-size: 16px;
+  line-height: 19px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.section-head {
+  margin-top: 32px;
+  margin-bottom: 24px;
+  font: 700 22px/1.2 "Open Sans", Arial, sans-serif;
+  color: #bbb;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 1240px) {
+  .container {
+    width: 960px;
+  }
+}
+.header_lead,
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header_sep {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 22px;
+  color: #29d682;
+  margin: 0 10px;
+}
+.logo {
+  font: 300 40px/1.2 "Open Sans", Arial, sans-serif;
+  color: #333;
+}
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+.main {
+  padding: 20px 0 140px;
+}
+.page-head {
+  margin: 0 0 32px;
+  font: 300 40px/1.2 "Open Sans", Arial, sans-serif;
+  color: #666;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  padding: 43px 0;
+  border-top: 1px solid #d9d9d9;
+  font-size: 16px;
+  line-height: 20px;
+}
+.footer_powered,
+.footer_powered:hover {
+  color: #262626;
+  text-decoration: none;
+}
+.footer_powered_text {
+  position: relative;
+  top: 1px;
+  margin: 0 2px 0 0;
+}
+.adguard-logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 102px;
+  height: 24px;
+  background: url('img/adguard-logo.svg') no-repeat;
+}
+.footer-menu_i {
+  float: left;
+  margin: 0 40px 0 0;
+}
+.footer-menu_i a {
+  color: #000;
+  text-decoration: none;
+}
+.footer_powered {
+  float: right;
+}
+.options .form-ui input[type="checkbox"],
+.options .form-ui input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  outline: 0 none;
+}
+.options .form-ui-txt:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url('img/radio.png') no-repeat;
+}
+.options .form-group {
+  margin: 15px 0 0;
+}
+.options .form-ui {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 20px;
+  margin: 0;
+  padding: 0 0 0 33px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.options .form-ui-txt {
+  display: inline-block;
+  vertical-align: top;
+}
