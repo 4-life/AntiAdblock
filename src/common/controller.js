@@ -1,19 +1,11 @@
-/* global GM_setValue, GM_getValue */
-
 import {Throttle} from 'lodash-decorators/throttle'; // jshint ignore:line
 import urls from '../common.urls.json';
-import {qsa} from './helpers';
+import {qsa, gm} from './helpers';
 import {options} from '../options/js/options';
 
 export default class Controller {
     constructor(view) {
         this.view = view;
-
-        // GM functions
-        this.GM = {
-            'set': GM_setValue, // jshint ignore:line
-            'get': GM_getValue  // jshint ignore:line
-        };
 
         const isOptionsPage = document.location.href.indexOf('/AntiAdblock/options/') >= 0;
 
@@ -107,10 +99,10 @@ export default class Controller {
             data = JSON.parse(data);
         }
 
-        this.GM.set('anti-adblock-store', data);
+        gm.set('anti-adblock-store', data);
     }
 
     getOptions() {
-        return this.GM.get('anti-adblock-store', options);
+        return gm.get('anti-adblock-store', options);
     }
 }

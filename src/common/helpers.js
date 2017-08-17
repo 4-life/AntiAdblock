@@ -1,3 +1,5 @@
+/* global GM_setValue, GM_getValue */
+
 export function qs(selector, scope) {
     return (scope || document).querySelector(selector);
 }
@@ -35,3 +37,8 @@ export function $delegate(target, selector, type, handler, capture) {
 }
 
 export const escapeForHTML = s => s.replace(/[&<]/g, c => c === '&' ? '&amp;' : '&lt;');
+
+export const gm = {
+    get: typeof(GM_getValue) === 'undefined' ? function() {return false;} : GM_getValue, // jshint ignore:line
+    set: typeof(GM_setValue) === 'undefined' ? function() {return false;} : GM_setValue // jshint ignore:line
+};
