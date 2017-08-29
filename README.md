@@ -20,3 +20,7 @@ For build userscript:
 For build options page:
 
     $ npm run opt-build
+
+Update localization files (requires download-API file settings):
+
+    $ npm run locales

@@ -2,7 +2,7 @@
 // @name Anti adblock
 // @namespace Adguard
 // @description Anti adblock
-// @version 1.0.5
+// @version 1.0.6
 // @downloadURL https://antiadblock.user.js
 // @updateURL https://antiadblock.meta.js
 // @include *
@@ -17,4 +17,6 @@
 // @exclude *www.youtube.com/embed/*
 // @grant GM_getValue
 // @grant GM_setValue
+// @grant GM_registerMenuCommand
+// @grant GM_openInTab
 // ==/UserScript==

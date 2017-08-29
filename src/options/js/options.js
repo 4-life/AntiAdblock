@@ -1,3 +1,5 @@
+export const optionsUrl = 'https://4-life.github.io/AntiAdblock/options/';
+
 export const options = {
     warningIconsNearLinks: true,
     preventAccess: true,

@@ -1,7 +1,7 @@
 import {Throttle} from 'lodash-decorators/throttle'; // jshint ignore:line
-import urls from '../common.urls.json';
 import {qsa, gm} from './helpers';
 import {options} from '../options/js/options';
+import {optionsUrl} from '../options/js/options';
 
 export default class Controller {
     constructor(view) {
@@ -15,18 +15,22 @@ export default class Controller {
         } else {
             this.pageRequirements(this.getOptions());
         }
+
+        gm.registerMenu('AntiAdblock settings page', this.registerMenu);
     }
 
     pageRequirements(options) {
         if (this.pageCheckRequirements(options)) {
-            this.view.checkLinks(urls);
+            this.view.checkLinks(options.preventAccess);
             this.view.bindOpenItemCancel();
             this.mutationObserver();
         }
     }
 
     pageCheckRequirements(opt) {
-        if (opt.google && document.location.host.indexOf('www.google.') === 0) {
+        if (!opt.warningIconsNearLinks) {
+            return false;
+        }else if (opt.google && document.location.host.indexOf('www.google.') === 0) {
             return true;
         } else if (opt.bing && document.location.host.indexOf('www.bing.com') === 0) {
             return true;
@@ -82,7 +86,7 @@ export default class Controller {
     /* jshint ignore:end */
     rebuild(elClasses) {
         if (!elClasses.contains('adguard-icon') && !elClasses.contains('adguard-icon-status')) {
-            this.view.checkLinks(urls);
+            this.view.checkLinks();
         }
     }
 
@@ -104,5 +108,9 @@ export default class Controller {
 
     getOptions() {
         return gm.get('anti-adblock-store', options);
+    }
+
+    registerMenu() {
+        document.location.href = optionsUrl;
     }
 }

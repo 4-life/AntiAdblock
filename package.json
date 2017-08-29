@@ -1,6 +1,6 @@
 {
   "name": "anti-adblock",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "ghtest": "gulp tests-gh-pages",
     "usr": "gulp userscript-dev",
     "opt-build": "NODE_ENV=production gulp options-dev",
-    "usr-build": "NODE_ENV=production gulp userscript-dev"
+    "usr-build": "NODE_ENV=production gulp userscript-dev",
+    "locales": "gulp download-localizations"
   },
   "author": "",
   "devDependencies": {
@@ -29,6 +30,8 @@
     "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
     "gulp-css2js": "^1.0.2",
+    "gulp-download-stream": "0.0.13",
+    "gulp-hash-creator": "^0.2.0",
     "gulp-inline-assets": "^0.1.1",
     "gulp-less": "^3.3.2",
     "gulp-sourcemaps": "^2.6.0",

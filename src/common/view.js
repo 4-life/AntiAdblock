@@ -1,5 +1,6 @@
 import {$on, $delegate, qsa} from './helpers';
 import Utils from './utils';
+import Urls from '../common.urls.json';
 
 const ESCAPE_KEY = 27;
 
@@ -21,29 +22,39 @@ export default class View {
         }, true);
     }
 
-    checkLinks(urls) {
+    checkLinks(preventAccess) {
         this.linkElements = document.querySelectorAll('a');
 
-        if(!this.linkElements.length) return false;
+        if(!this.linkElements.length) {
+            return false;
+        }
 
-        this.linkElements.forEach((el) => {
-            if (this.linkCheckRequirements(el)) {
-                let adguard = document.createElement('div');
-                let adguradIcon = document.createElement('div');
-                adguard.className = 'adguard-icon';
-                adguard.setAttribute('data-href', el.hostname);
-                adguradIcon.className = 'adguard-icon-status';
+        this.linkElements.forEach(el => {
+            this.addIconToLinkElement(el, {preventAccess: preventAccess});
+        });
+    }
 
-                adguard.appendChild(adguradIcon);
+    addIconToLinkElement(el, options) {
+        if (this.linkCheckRequirements(el)) {
+            let adguard = document.createElement('div');
+            let adguradIcon = document.createElement('div');
+            adguard.className = 'adguard-icon';
+            adguard.setAttribute('data-href', el.hostname);
+            adguradIcon.className = 'adguard-icon-status';
 
-                let status = urls.data.find(this.compare.bind(this, el.hostname, adguradIcon));
+            adguard.appendChild(adguradIcon);
 
-                if (status) {
-                    el.parentNode.insertBefore(adguard, el.nextSibling);
-                    this.showLinkStatus(adguradIcon, status);
+            let status = Urls.data.find(this.compare.bind(this, el.hostname, adguradIcon));
+
+            if (status) {
+                el.parentNode.insertBefore(adguard, el.nextSibling);
+                this.showLinkStatus(adguradIcon, status);
+
+                if(options.preventAccess) {
+                    $on(el, 'click', this.preventDefault);
                 }
             }
-        });
+        }
     }
 
     linkCheckRequirements(el) {
@@ -110,6 +121,10 @@ export default class View {
 
     stopPropagation(e) {
         e.stopPropagation();
+    }
+
+    preventDefault(e) {
+        e.preventDefault();
     }
 
     pageOptionsChangeListener(handler) {
